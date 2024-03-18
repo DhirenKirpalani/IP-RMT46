@@ -3,9 +3,9 @@ import SideBar from "./SideBar"
 export default function AdminPanel() {
     return (
         <>
-        <SideBar />
         <div className="row">
-        <div className="col-md-9 col-lg-10 ms-sm-auto pt-20 ps-3">
+        <SideBar />
+        <div className="col-md-9 col-lg-10 ms-sm-auto pt-20 ps-5 text-center" style={{ marginTop: "200px" }}>
                 <h1>Welcome to the Burger Bites Admin Panel</h1>
             </div>
         </div>

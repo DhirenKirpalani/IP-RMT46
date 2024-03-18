@@ -24,6 +24,16 @@ export default function Card({ burgerId, name, desc, price, veg, images, title =
         }
     };
 
+    const increaseQuantity = () => {
+        setQuantity(quantity + 1);
+    };
+
+    const decreaseQuantity = () => {
+        if (quantity > 0) {
+            setQuantity(quantity - 1);
+        }
+    };
+
     const handleAddToCart = async () => {
         if (quantity > 0) {
             try {
@@ -71,13 +81,28 @@ export default function Card({ burgerId, name, desc, price, veg, images, title =
                         <h5>
                             {formatCurrency(price)} <button className="custom-login-btn" style={{ height: "100%" }} onClick={handleAddToCart}>{title}</button>
                         </h5>
-                        <input
-                            type="number"
-                            className="quantity-input mt-2"
-                            value={quantity}
-                            onChange={handleInputChange}
-                            placeholder="quantity"
-                        />
+                        <div style={{ display: 'flex', alignItems: 'center' }}>
+                            <button onClick={decreaseQuantity}>-</button>
+                            <input
+                                type="number"
+                                // className="quantity-input mt-2"
+                                value={quantity}
+                                onChange={handleInputChange}
+                                placeholder="quantity"
+                                style={{
+                                    padding: '10px',
+                                    border: '1px solid #ccc',
+                                    borderRadius: '5px',
+                                    fontSize: '16px',
+                                    outline: 'none',
+                                    marginLeft: '5px',
+                                    marginRight: '5px',
+                                    width: '50px', 
+                                    height: '44px', 
+                                }}
+                            />
+                            <button onClick={increaseQuantity}>+</button>
+                        </div>
                     </div>
                 </div>
             </div>

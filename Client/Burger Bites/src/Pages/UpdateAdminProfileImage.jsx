@@ -34,12 +34,12 @@ export default function UpdateAdminProfileImage() {
             })
             console.log(response.data)
             successToast("Image successfully updated!");
-            nav("/adminprofile")
+            nav("/adminpanel/adminprofile")
         } catch (error) {
             console.log(error.response?.data.message || error.message)
             errorAlert(error.response.data.message);
         } finally {
-            nav("/adminprofile")
+            nav("/adminpanel/adminprofile")
         }
     }
     return (
